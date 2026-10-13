@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Operations and content support for founders and remote teams. Workflow improvement, publishing, data quality, documentation, and administrative support.">
+  <title>Satpal Singh | Operations & Content Support</title>
+
+  <style>
+    :root {
+      --navy: #10233f;
+      --navy-light: #183553;
+      --teal: #0c9b91;
+      --teal-light: #e3f7f4;
+      --text: #263449;
+      --muted: #66758a;
+      --background: #f7f9fc;
+      --white: #ffffff;
+      --border: #e3e9f0;
+      --radius: 18px;
+      --shadow: 0 12px 35px rgba(16, 35, 63, 0.07);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--background);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: 0 auto;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: -0.4px;
+    }
+
+    .logo span {
+      color: var(--teal);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      list-style: none;
+      font-size: 0.91rem;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: var(--teal);
+    }
+
+    .nav-cta,
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 12px 20px;
+      border-radius: 9px;
+      font-weight: 700;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .nav-cta,
+    .button-primary {
+      color: var(--white);
+      background: var(--teal);
+    }
+
+    .nav-cta:hover,
+    .button-primary:hover {
+      background: #087f78;
+      transform: translateY(-2px);
+    }
+
+    .button-secondary {
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      color: var(--white);
+    }
+
+    .button-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .hero {
+      background:
+        radial-gradient(circle at 85% 20%, rgba(12, 155, 145, 0.19), transparent 28%),
+        linear-gradient(135deg, var(--navy), #142e4b);
+      color: var(--white);
+      padding: 105px 0 100px;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 0.8fr;
+      align-items: center;
+      gap: 70px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: #73e0d4;
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      max-width: 720px;
+      font-size: clamp(2.5rem, 5vw, 4.4rem);
+      line-height: 1.1;
+      letter-spacing: -2px;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: #67d9ce;
+    }
+
+    .hero-text {
+      max-width: 650px;
+      color: #d3dfec;
+      font-size: 1.08rem;
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-bottom: 30px;
+    }
+
+    .hero-note {
+      color: #b9c9d9;
+      font-size: 0.9rem;
+    }
+
+    .hero-card {
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 22px;
+      box-shadow: 0 25px 65px rgba(0, 0, 0, 0.12);
+    }
+
+    .hero-card-label {
+      color: #81e0d6;
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 20px;
+    }
+
+    .hero-point {
+      display: flex;
+      gap: 13px;
+      align-items: flex-start;
+      margin: 19px 0;
+      color: #e6edf5;
+    }
+
+    .check {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background: rgba(12, 155, 145, 0.23);
+      color: #80e5da;
+      font-weight: 800;
+    }
+
+    section {
+      padding: 85px 0;
+    }
+
+    .section-heading {
+      max-width: 720px;
+      margin-bottom: 42px;
+    }
+
+    .section-label {
+      color: var(--teal);
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.7px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      color: var(--navy);
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      line-height: 1.2;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+    }
+
+    .section-heading p,
+    .body-copy {
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 50px;
+      align-items: start;
+    }
+
+    .about-copy p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .highlight-card {
+      background: var(--white);
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .highlight-card h3 {
+      color: var(--navy);
+      margin-bottom: 15px;
+      font-size: 1.2rem;
+    }
+
+    .highlight-list {
+      list-style: none;
+    }
+
+    .highlight-list li {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    .highlight-list li:last-child {
+      border-bottom: none;
+    }
+
+    .services {
+      background: #edf3f8;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .service-card,
+    .project-card,
+    .skill-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 27px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .service-card:hover,
+    .project-card:hover,
+    .skill-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+
+    .icon-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 13px;
+      background: var(--teal-light);
+      color: #087f78;
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3,
+    .project-card h3,
+    .skill-card h3 {
+      color: var(--navy);
+      font-size: 1.15rem;
+      margin-bottom: 11px;
+    }
+
+    .service-card p,
+    .project-card p,
+    .skill-card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: 0.65fr 1.35fr;
+      gap: 45px;
+    }
+
+    .experience-intro {
+      position: sticky;
+      top: 110px;
+      align-self: start;
+    }
+
+    .experience-item {
+      position: relative;
+      padding: 0 0 35px 28px;
+      border-left: 2px solid #d8e7e8;
+    }
+
+    .experience-item:last-child {
+      padding-bottom: 0;
+      border-left-color: transparent;
+    }
+
+    .experience-item::before {
+      content: "";
+      position: absolute;
+      left: -8px;
+      top: 5px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--teal);
+      border: 3px solid var(--teal-light);
+    }
+
+    .experience-date {
+      color: var(--teal);
+      font-size: 0.85rem;
+      font-weight: 800;
+      margin-bottom: 7px;
+    }
+
+    .experience-item h3 {
+      color: var(--navy);
+      font-size: 1.22rem;
+      margin-bottom: 5px;
+    }
+
+    .experience-company {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 14px;
+    }
+
+    .experience-item ul {
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    .experience-item li {
+      margin-bottom: 9px;
+    }
+
+    .skills-section {
+      background: var(--navy);
+    }
+
+    .skills-section h2 {
+      color: var(--white);
+    }
+
+    .skills-section .section-heading p {
+      color: #c4d2e0;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .skill-card {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.12);
+    }
+
+    .skill-card h3 {
+      color: var(--white);
+    }
+
+    .skill-card p {
+      color: #c4d2e0;
+    }
+
+    .skill-card .icon-box {
+      background: rgba(12, 155, 145, 0.2);
+      color: #7ce0d5;
+    }
+
+    .projects-note {
+      background: var(--teal-light);
+      border: 1px solid #c6ece7;
+      padding: 18px 22px;
+      border-radius: 12px;
+      color: #255c59;
+      margin-bottom: 28px;
+      font-size: 0.94rem;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .project-type {
+      display: inline-block;
+      font-size: 0.76rem;
+      font-weight: 800;
+      color: #087f78;
+      background: var(--teal-light);
+      padding: 5px 10px;
+      border-radius: 30px;
+      margin-bottom: 17px;
+    }
+
+    .project-card p {
+      margin-bottom: 18px;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: auto;
+    }
+
+    .project-tags span {
+      font-size: 0.77rem;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 5px 9px;
+    }
+
+    .process {
+      background: #edf3f8;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .process-step {
+      padding: 25px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .step-number {
+      color: var(--teal);
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin-bottom: 15px;
+    }
+
+    .process-step h3 {
+      color: var(--navy);
+      margin-bottom: 10px;
+      font-size: 1.08rem;
+    }
+
+    .process-step p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .contact {
+      background:
+        radial-gradient(circle at 90% 10%, rgba(12, 155, 145, 0.2), transparent 30%),
+        var(--navy);
+      color: var(--white);
+      text-align: center;
+    }
+
+    .contact h2 {
+      color: var(--white);
+    }
+
+    .contact .section-label {
+      color: #73e0d4;
+    }
+
+    .contact-content {
+      max-width: 730px;
+      margin: 0 auto;
+    }
+
+    .contact-content p {
+      color: #d0dce8;
+      margin-bottom: 28px;
+    }
+
+    .contact-note {
+      font-size: 0.9rem;
+      color: #b9c9d9;
+      margin-top: 18px;
+    }
+
+    footer {
+      background: #0a192d;
+      color: #b9c9d9;
+      padding: 24px 0;
+      font-size: 0.86rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .footer-inner a:hover {
+      color: #73e0d4;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .about-grid,
+      .experience-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid {
+        gap: 40px;
+      }
+
+      .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .skills-grid,
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .experience-intro {
+        position: static;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .nav-inner {
+        padding: 15px 0;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .nav-links {
+        gap: 14px;
+        flex-wrap: wrap;
+        font-size: 0.82rem;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .hero {
+        padding: 70px 0;
+      }
+
+      .hero h1 {
+        letter-spacing: -1px;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .cards-grid,
+      .skills-grid,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card,
+      .service-card,
+      .project-card,
+      .skill-card {
+        padding: 23px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a class="logo" href="#home">Satpal<span>.</span></a>
+
+```
+  <nav aria-label="Main navigation">
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">What I Do</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Case Studies</a></li>
+    </ul>
+  </nav>
+
+  <a class="nav-cta" href="#contact">Let's Connect</a>
+</div>
+```
+
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Operations · Content · Process Support</div>
+          <h1>Making business operations <span>run better.</span></h1>
+          <p class="hero-text">
+            I help founders and remote teams organise recurring work, improve
+            workflows, maintain accurate content, and turn scattered tasks
+            into clear, manageable processes.
+          </p>
+
+```
+      <div class="hero-buttons">
+        <a class="button button-primary" href="#projects">Explore My Work</a>
+        <a class="button button-secondary" href="#contact">Get in Touch</a>
+      </div>
+
+      <p class="hero-note">
+        Publishing expertise · Data quality · Documentation · Administrative support
+      </p>
+    </div>
+
+    <aside class="hero-card">
+      <div class="hero-card-label">How I can help</div>
+
+      <div class="hero-point">
+        <span class="check">✓</span>
+        <span>Keep recurring tasks, updates, and follow-ups organised.</span>
+      </div>
+
+      <div class="hero-point">
+        <span class="check">✓</span>
+        <span>Improve content accuracy and publishing workflows.</span>
+      </div>
+
+      <div class="hero-point">
+        <span class="check">✓</span>
+        <span>Document processes so work is easier to follow and repeat.</span>
+      </div>
+
+      <div class="hero-point">
+        <span class="check">✓</span>
+        <span>Support teams with research, records, and operational coordination.</span>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="section-heading">
+      <div class="section-label">A little about me</div>
+      <h2>Reliable execution, with an eye for the details.</h2>
+      <p>
+        Good operations are not always about doing more. They are about
+        making sure the right work gets done accurately, consistently,
+        and without unnecessary confusion.
+      </p>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-copy">
+        <p>
+          My background combines publishing support, content operations,
+          data validation, quality checks, documentation, and business
+          development support.
+        </p>
+
+        <p>
+          In comparison-site publishing, I worked with mobile, broadband,
+          and energy content, checking provider information and updating
+          website data to help keep offers, prices, and plan details
+          accurate and current.
+        </p>
+
+        <p>
+          I have also supported email-based business development,
+          prospect research, LinkedIn outreach, and lead-generation
+          activities. I enjoy work that requires organisation,
+          follow-through, clear communication, and attention to detail.
+        </p>
+
+        <p>
+          Today, I want to bring that experience to founders and remote
+          teams that need dependable support with the recurring work
+          behind their business.
+        </p>
+      </div>
+
+      <div class="highlight-card">
+        <h3>My working principles</h3>
+        <ul class="highlight-list">
+          <li>✓ Accuracy before assumptions</li>
+          <li>✓ Clear processes and documentation</li>
+          <li>✓ Consistent follow-through</li>
+          <li>✓ Practical communication and reporting</li>
+          <li>✓ Continuous improvement, one step at a time</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-heading">
+      <div class="section-label">What I do</div>
+      <h2>Practical support for the work that keeps a business moving.</h2>
+      <p>
+        Support can be shaped around your existing processes, recurring
+        workload, and the areas where your team needs more consistency.
+      </p>
+    </div>
+
+    <div class="cards-grid">
+      <article class="service-card">
+        <div class="icon-box">↗</div>
+        <h3>Operations & Admin Support</h3>
+        <p>
+          Organising tasks, maintaining records, tracking follow-ups,
+          coordinating routine activities, and helping important work
+          stay visible and on track.
+        </p>
+      </article>
+
+      <article class="service-card">
+        <div class="icon-box">✎</div>
+        <h3>Content & Publishing</h3>
+        <p>
+          CMS updates, page maintenance, content checks, website
+          publishing support, and structured updates to keep information
+          clear and current.
+        </p>
+      </article>
+
+      <article class="service-card">
+        <div class="icon-box">✓</div>
+        <h3>Data Quality & Audits</h3>
+        <p>
+          Comparing website information against source data, checking
+          prices and details, identifying discrepancies, and recording
+          corrections carefully.
+        </p>
+      </article>
+
+      <article class="service-card">
+        <div class="icon-box">▤</div>
+        <h3>SOPs & Documentation</h3>
+        <p>
+          Turning recurring activities into clear instructions,
+          checklists, and documented workflows that are easier for
+          people to follow consistently.
+        </p>
+      </article>
+
+      <article class="service-card">
+        <div class="icon-box">◎</div>
+        <h3>Research & Outreach Support</h3>
+        <p>
+          Prospect research, contact-list preparation, business
+          research, LinkedIn outreach support, and email-based
+          business development activities.
+        </p>
+      </article>
+
+      <article class="service-card">
+        <div class="icon-box">⚙</div>
+        <h3>Workflow & AI Assistance</h3>
+        <p>
+          Exploring practical ways to use AI tools for drafting,
+          organising information, creating checklists, and making
+          repetitive work easier to manage—with human review.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="container experience-grid">
+    <div class="experience-intro">
+      <div class="section-label">Experience</div>
+      <h2>Built around accuracy, consistency, and teamwork.</h2>
+      <p class="body-copy">
+        Experience across publishing operations, website content,
+        data checks, and business development support.
+      </p>
+    </div>
+
+    <div class="timeline">
+      <article class="experience-item">
+        <div class="experience-date">November 2023 – April 2026</div>
+        <h3>Senior Publishing Support – Utilities</h3>
+        <div class="experience-company">Comparison website · Mobile, Broadband & Energy</div>
+        <ul>
+          <li>Maintained and updated comparison content using WordPress and internal workflows.</li>
+          <li>Checked provider websites and compared source information with published website data.</li>
+          <li>Updated offers, plan prices, provider names, and broadband and mobile plan details.</li>
+          <li>Performed quality and compliance checks to help maintain accurate, reliable content.</li>
+          <li>Supported team coordination, workflow documentation, and standard operating procedures.</li>
+          <li>Worked with colleagues across teams in Australia and the Philippines.</li>
+        </ul>
+      </article>
+
+      <article class="experience-item">
+        <div class="experience-date">Earlier Experience</div>
+        <h3>Business Development & Outreach Support</h3>
+        <div class="experience-company">IT services · B2B prospecting and lead generation</div>
+        <ul>
+          <li>Supported email marketing campaigns to generate B2B opportunities in the United States.</li>
+          <li>Researched prospects and supported outreach activities aimed at arranging business meetings.</li>
+          <li>Built experience in business communication, lead research, and follow-up activities.</li>
+          <li>Also developed experience with LinkedIn outreach and marketing support.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="skills-section" id="skills">
+  <div class="container">
+    <div class="section-heading">
+      <div class="section-label">Skills & tools</div>
+      <h2>Organised work. Practical tools. Attention to detail.</h2>
+      <p>
+        A mix of publishing systems, everyday productivity tools,
+        quality processes, and communication support.
+      </p>
+    </div>
+
+    <div class="skills-grid">
+      <article class="skill-card">
+        <div class="icon-box">▣</div>
+        <h3>Publishing & CMS</h3>
+        <p>WordPress, content updates, page maintenance, and publishing checks.</p>
+      </article>
+
+      <article class="skill-card">
+        <div class="icon-box">▦</div>
+        <h3>Data & Spreadsheets</h3>
+        <p>Microsoft Excel, Google Sheets, data comparison, and record maintenance.</p>
+      </article>
+
+      <article class="skill-card">
+        <div class="icon-box">☑</div>
+        <h3>Task & Process Tools</h3>
+        <p>JIRA, Confluence, Versionista, documentation, and workflow tracking.</p>
+      </article>
+
+      <article class="skill-card">
+        <div class="icon-box">✉</div>
+        <h3>Communication & Research</h3>
+        <p>Email marketing support, LinkedIn outreach, prospect research, and follow-ups.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <div class="section-heading">
+      <div class="section-label">Selected work</div>
+      <h2>How I approach real operational challenges.</h2>
+      <p>
+        These examples illustrate my approach to common business tasks.
+        They are sample case studies, not claims of client projects or
+        measured business results.
+      </p>
+    </div>
+
+    <div class="projects-note">
+      <strong>Portfolio note:</strong> The case studies below are
+      demonstration examples based on the types of work I can support.
+      They can be expanded with redacted work samples or verified results
+      where appropriate.
+    </div>
+
+    <div class="cards-grid">
+      <article class="project-card">
+        <span class="project-type">Sample case study 01</span>
+        <h3>Website Content Accuracy Workflow</h3>
+        <p>
+          A repeatable process for checking published plan information
+          against provider sources, recording discrepancies, updating
+          content, and completing a final quality check.
+        </p>
+        <div class="project-tags">
+          <span>WordPress</span>
+          <span>Data validation</span>
+          <span>Quality checks</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <span class="project-type">Sample case study 02</span>
+        <h3>Simple SOP for Recurring Tasks</h3>
+        <p>
+          Turning an activity that relies on memory into a step-by-step
+          checklist with clear instructions, responsibility, review
+          points, and an escalation route for exceptions.
+        </p>
+        <div class="project-tags">
+          <span>Documentation</span>
+          <span>Checklists</span>
+          <span>Consistency</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <span class="project-type">Sample case study 03</span>
+        <h3>Structured Prospect Research</h3>
+        <p>
+          Organising business research into a clear prospect sheet with
+          relevant company details, decision-maker information, a
+          reason for outreach, and follow-up status.
+        </p>
+        <div class="project-tags">
+          <span>Research</span>
+          <span>Spreadsheets</span>
+          <span>Outreach support</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="approach">
+  <div class="container">
+    <div class="section-heading">
+      <div class="section-label">How I work</div>
+      <h2>Understand first. Organise next. Improve continuously.</h2>
+      <p>
+        I prefer to understand how a team currently works before
+        recommending changes or introducing a new process.
+      </p>
+    </div>
+
+    <div class="process-grid">
+      <article class="process-step">
+        <div class="step-number">01</div>
+        <h3>Understand</h3>
+        <p>Clarify the task, expected outcome, current process, and priorities.</p>
+      </article>
+
+      <article class="process-step">
+        <div class="step-number">02</div>
+        <h3>Organise</h3>
+        <p>Identify missing information, repeated work, unclear steps, and dependencies.</p>
+      </article>
+
+      <article class="process-step">
+        <div class="step-number">03</div>
+        <h3>Document & Execute</h3>
+        <p>Create practical checklists or instructions and carry out agreed tasks carefully.</p>
+      </article>
+
+      <article class="process-step">
+        <div class="step-number">04</div>
+        <h3>Review & Improve</h3>
+        <p>Share progress, flag issues early, and refine the process based on feedback.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container contact-content">
+    <div class="section-label">Let's connect</div>
+    <h2>Need dependable support behind the scenes?</h2>
+    <p>
+      If your team needs help with publishing, recurring operations,
+      data checks, documentation, research, or administrative workflows,
+      I'd be happy to discuss what you need.
+    </p>
+
+    <a class="button button-primary"
+       href="https://www.linkedin.com/in/satpal-singh-6b201272/"
+       target="_blank"
+       rel="noopener noreferrer">
+      Connect on LinkedIn
+    </a>
+
+    <p class="contact-note">
+      Open to discussing remote support opportunities and project-based work.
+    </p>
+  </div>
+</section>
+```
+
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Satpal Singh. Built with care.</p>
+      <a href="#home">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const revealItems = document.querySelectorAll(
+      ".service-card, .experience-item, .skill-card, .project-card, .process-step, .highlight-card"
+    );
+
+    revealItems.forEach((item) => item.classList.add("reveal"));
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      revealItems.forEach((item) => observer.observe(item));
+    } else {
+      revealItems.forEach((item) => item.classList.add("visible"));
+    }
+  </script>
+
+</body>
+</html>
